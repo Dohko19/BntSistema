@@ -15,6 +15,13 @@ class CreateSuasTable extends Migration
     {
         Schema::create('suas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('user_id');
+            $table->bigInteger('num_mes');
+            $table->string('mes');
+            $table->bigInteger('año');
+            $table->string('cedula_determinacion_cuotas');
+            $table->string('resumen_liquidacion');
+            $table->string('pago_sua');
             $table->timestamps();
         });
     }

@@ -111,7 +111,7 @@
                                     <a href="{{ route('admin.ebas.index') }}">EBA</a>
                                 </li>
                                 <li>
-                                    <a href="#">SUA</a>
+                                    <a href="{{ route('admin.suas.index') }}">SUA</a>
                                 </li>
                                 <li>
                                     <a href="#">Pagos Provisionales</a>

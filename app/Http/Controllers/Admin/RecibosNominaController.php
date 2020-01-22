@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Marca;
 use App\Closter;
+use App\RecibosNomina;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RecibosNominaRequest;
 use App\Http\Requests\StoreClientRequest;
-use App\Marca;
-use App\RecibosNomina;
-use Illuminate\Http\Request;
 
 class RecibosNominaController extends Controller
 {

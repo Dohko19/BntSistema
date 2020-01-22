@@ -1,7 +1,6 @@
 <?php
 Auth::routes(['register' => false]);
 
-
 Route::get('/', 'PagesController@index')->name('home');
 
 Route::resource('dashboard', 'DashboardController');
@@ -21,4 +20,5 @@ function (){
 	Route::resource('marcas', 'MarcaController', ['as' => 'admin']);
 	Route::resource('emas', 'EmaController', ['as' => 'admin']);
 	Route::resource('ebas', 'EbaController', ['as' => 'admin']);
+	Route::resource('suas', 'SuaController', ['as' => 'admin']);
 });

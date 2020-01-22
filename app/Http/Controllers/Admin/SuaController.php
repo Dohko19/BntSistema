@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Sua;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class SuaController extends Controller
 {
@@ -14,7 +15,8 @@ class SuaController extends Controller
      */
     public function index()
     {
-        //
+        $suas = Sua::all();
+        return view('admin.sua.index', compact('suas'));
     }
 
     /**
