@@ -12,10 +12,8 @@
                     <div class="card-content">
                         <h4 class="card-title">Reporte SUA</h4>
                         <div class="toolbar">
-                            <a href="#"
-                                    class="btn btn-primary"
-                                    data-toggle="modal"
-                                    data-target="#exampleModal">
+                            <a href="{{ route('admin.suas.create') }}"
+                                    class="btn btn-primary">
                                     <i class="fa fa-plus"></i>
                                         Agregar SUA
                                 </a>
@@ -24,38 +22,54 @@
                             <table id="datatablesSua" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>NSS</th>
-                                        <th>Nombre</th>
-                                        <th>Closter</th>
-                                        <th>Tienda</th>
-                                        <th>Recibo Nomina</th>
+                                        <th>Num. Mes</th>
+                                        <th>Mes</th>
+                                        <th>Año</th>
+                                        <th>Cedula de Determinacion de Cuotas</th>
+                                        <th>Resumen de Liquidacion</th>
+                                        <th>Pago SUA</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($suas as $sua)
                                         <tr>
-                                            <td>
+                                            <td class="text-center">
                                                {{ $sua->num_mes }}
                                             </td>
-                                            <td>
-                                                    {{ $sua->mes }}
+                                            <td class="text-center">
+                                                {{ $sua->month->format('F') }}
                                             </td>
-                                            <td>
-                                                {{ $sua->año }}
+                                            <td class="text-center">
+                                                {{ $sua->year->format('Y') }}
                                             </td>
-                                            <td>
-                                                {{ $sua->cedula_determinacion_cuotas }}
+                                            <td class="text-center">
+                                                <a href="#">
+                                                    {{ $sua->cedula_determinacion_cuotas }}
+                                                    <i class="fa fa-file-pdf-o"></i>
+                                                </a>
 
                                             </td>
+                                            <td class="text-center">
+                                                <a href="#">
+                                                    {{ $sua->resumen_liquidacion }}
+                                                    <i class="fa fa-file-pdf-o"></i>
+                                                </a>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="#">
+                                                    {{ $sua->pago_sua }}
+                                                    <i class="fa fa-file-pdf-o"></i>
+                                                </a>
+                                            </td>
                                             <td>
-                                                <a data-toggle="tooltip" data-placement="top" title="Descargar" class="btn btn-sm btn-just-icon btn-simple btn-twitter" target="_blank" href="{{ url('/recibos/nomina/'.$sua->recibo_nomina) }}">
-                                                    <i class="fa fa-download">
-                                                    </i></a>
                                                 @can('delete', $sua)
                                                 <form style="display: inline;" action="{{ route('admin.suas.destroy', $sua) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
+                                                @can('update', $sua)
                                             <a data-toggle="tooltip" data-placement="top" title="Editar Registro" class="btn btn-sm btn-just-icon btn-simple btn-github" href="{{ route('admin.suas.edit', $sua) }}"  ><i class="fa fa-edit"></i></a>
+                                                @endcan
                                             <button class="btn btn-sm btn-just-icon btn-simple btn-youtube" onclick="return confirm('Estas seguro de Eliminar esta publicacion?')"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="Borrar Registro"></i></button>
                                             </form>
                                               @endcan

@@ -95,6 +95,7 @@
      window.location.hash = '#createeba';
     });
   </script>
+
   <script>
   // FileInput
   $('.form-file-simple .inputFileVisible').click(function() {

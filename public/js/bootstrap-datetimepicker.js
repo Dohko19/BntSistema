@@ -2411,7 +2411,7 @@
     };
 
     $.fn.datetimepicker.defaults = {
-        timeZone: 'Etc/UTC',
+        timeZone: 'America/Mexico_City',
         format: false,
         dayViewHeaderFormat: 'MMMM YYYY',
         extraFormats: false,

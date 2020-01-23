@@ -81,6 +81,11 @@ class User extends Authenticatable
         return $this->hasMany(Eba::class);
     }
 
+    public function suas()
+    {
+        return $this->hasMany(Sua::class);
+    }
+
     public function scopeAllowed($query)
     {
         if (auth()->user()->can('view', $this))

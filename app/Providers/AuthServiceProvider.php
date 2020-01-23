@@ -19,6 +19,7 @@ class AuthServiceProvider extends ServiceProvider
         'App\Marca' => 'App\Policies\MarcaNominaPolicy',
         'App\Ema' => 'App\Policies\EmaPolicy',
         'App\Eba' => 'App\Policies\EbaPolicy',
+        'App\Sua' => 'App\Policies\SuaPolicy',
     ];
 
     /**

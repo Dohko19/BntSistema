@@ -60,7 +60,7 @@ class EmaController extends Controller
                 }
         }
 
-         return redirect()->route('admin.emas.index', compact('ema'))->with('info', 'Agregado Correctamente');
+        return redirect()->route('admin.emas.index', compact('ema'))->with('info', 'Agregado Correctamente');
     }
 
     /**

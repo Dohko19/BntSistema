@@ -27,7 +27,7 @@ class PagesController extends Controller
     public function index()
     {
         if (auth()->user()->isAdmin()) {
-            $users = User::allowed()->get();
+            $users = User::all();
             return view('dashboard.index', compact('users'));
         }
         return view('dashboard.index');
