@@ -38,10 +38,10 @@
                                                {{ $sua->num_mes }}
                                             </td>
                                             <td class="text-center">
-                                                {{ $sua->month->format('F') }}
+                                                {{ $sua->month }}
                                             </td>
                                             <td class="text-center">
-                                                {{ $sua->year->format('Y') }}
+                                                {{ $sua->year }}
                                             </td>
                                             <td class="text-center">
                                                 <a class="btn btn-sm btn-just-icon btn-simple btn-youtube" href="{{ url('/area_legal/sua/'.$sua->cedula_determinacion_cuotas) }}">

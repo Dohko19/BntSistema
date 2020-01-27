@@ -48,7 +48,6 @@ class SuaController extends Controller
 
         $this->authorize('create', new Sua);
         $sua = Sua::create($request->except(['cedula_determinacion_cuotas', 'resumen_liquidacion', 'pago_sua']));
-        ddd($sua);
         if ($request->hasFile('cedula_determinacion_cuotas'))
         {
             $file = $request->file('cedula_determinacion_cuotas');

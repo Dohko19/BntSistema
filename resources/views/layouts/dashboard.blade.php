@@ -110,7 +110,7 @@
                                 <li class="{{ setActiveRoute('admin.ebas.index') }}">
                                     <a href="{{ route('admin.ebas.index') }}">EBA</a>
                                 </li>
-                                <li>
+                                <li class="{{ setActiveRoute('admin.suas.index') }}">
                                     <a href="{{ route('admin.suas.index') }}">SUA</a>
                                 </li>
                                 <li>

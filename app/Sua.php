@@ -15,18 +15,6 @@ class Sua extends Model
         'resumen_liquidacion', 'pago_sua', 'user_id'
     	];
 
-    protected $dates = ['year', 'month'];
-
-    public function getYearAttribute($year)
-    {
-    	return new Date($year);
-    }
-
-    public function getMonthAttribute($month)
-    {
-    	return new Date($month);
-    }
-
     public static function create(array $attributes = [])
     {
         $attributes['user_id'] = auth()->id();

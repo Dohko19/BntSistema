@@ -39,27 +39,62 @@
 						              </div>
 						            @enderror
 					          </div>
-					          <div class="form-group">
-								      <label class="">Mes</label>
-					                <input type="text"
-						                class="form-control datepickerMonth"
-						                value="{{ old('month') }}"
-						                name="month"
-						                lang="es"
-						                autofocus required/>
-						             @error('month')
-						              <div class="help-block">
-						                <strong>{{ $message }}</strong>
-						              </div>
-						            @enderror
-					           </div>
+                     <div class="{{ $errors->has('month') ? 'has-error' : '' }}">
+                        <div class="col-lg-5 col-md-6 col-sm-3">
+                            <select class="selectpicker" data-style="btn btn-info btn-round" title="Selecciona un mes" data-size="7" name="month" required autofocus>
+                                <option value="enero">
+                                    Enero
+                                </option>
+                                <option value="Febrero">
+                                    Febrero
+                                </option>
+                                <option value="Marzo">
+                                    Marzo
+                                </option>
+                                <option value="Abril">
+                                    Abril
+                                </option>
+                                <option value="Mayo">
+                                    Mayo
+                                </option>
+                                <option value="Junio">
+                                    Junio
+                                </option>
+                                <option value="Julio">
+                                    Julio
+                                </option>
+                                <option value="Agosto">
+                                    Agosto
+                                </option>
+                                <option value="Septiembre">
+                                    Septiembre
+                                </option>
+                                <option value="Octubre">
+                                    Octubre
+                                </option>
+                                <option value="Noviembre">
+                                    Noviembre
+                                </option>
+                                <option value="Diciembre">
+                                    Diciembre
+                                </option>
+                            </select>
+                            @error('month')
+                                <div class="help-block">
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
+                        </div>
+                    </div><br><br><br>
                      <div class="form-group">
                       <label class="">Año</label>
-                          <input type="text"
-                            class="form-control datepickerYear"
+                          <input type="number"
+                            class="form-control"
                             value="{{ old('month') }}"
                             name="year"
                             lang="es"
+                            max="12"
+                            min="1"
                             autofocus required/>
                          @error('month')
                           <div class="help-block">
@@ -70,8 +105,15 @@
                      <div class="form-group {{ $errors->has('cedula_determinacion_cuotas') ? 'has-error' : '' }}">
                        <label for="label-control">Cedula de Determicion de Cuotas</label>
                        <div class="form-group form-file-upload form-file-simple">
-                          <input type="text" class="form-control inputFileVisible" placeholder="Selecciona archivo para Cedula de Determicion de Cuotas" value="{{ old('cedula_determinacion_cuotas') }}">
-                          <input type="file" name="cedula_determinacion_cuotas" class="inputFileHidden" value="{{ old('cedula_determinacion_cuotas') }}">
+                          <input
+                          type="text"
+                          class="form-control inputFileVisible"
+                          placeholder="Selecciona archivo para Cedula de Determicion de Cuotas"
+                          value="{{ old('cedula_determinacion_cuotas') }}">
+                          <input type="file"
+                          name="cedula_determinacion_cuotas"
+                          class="inputFileHidden"
+                          value="{{ old('cedula_determinacion_cuotas') }}">
                         </div>
                      </div>
                      <div class="form-group {{ $errors->has('resumen_liquidacion') ? 'has-error' : '' }}">
@@ -152,42 +194,4 @@
     $(this).parent().siblings().trigger('focusout');
   });
   </script>
-
-  <script type="text/javascript">
-  	$('.datepickerMonth').datetimepicker({
-  		 	timeZone: 'America/Mexico_City',
-            format: 'MM',
-            icons: {
-                time: "fa fa-clock-o",
-                date: "fa fa-calendar",
-                up: "fa fa-chevron-up",
-                down: "fa fa-chevron-down",
-                previous: 'fa fa-chevron-left',
-                next: 'fa fa-chevron-right',
-                today: 'fa fa-screenshot',
-                clear: 'fa fa-trash',
-                close: 'fa fa-remove',
-                inline: true
-            },
-         });
-
-    $('.datepickerYear').datetimepicker({
-            timeZone: 'America/Mexico_City',
-                format: 'YY',
-                icons: {
-                    time: "fa fa-clock-o",
-                    date: "fa fa-calendar",
-                    up: "fa fa-chevron-up",
-                    down: "fa fa-chevron-down",
-                    previous: 'fa fa-chevron-left',
-                    next: 'fa fa-chevron-right',
-                    today: 'fa fa-screenshot',
-                    clear: 'fa fa-trash',
-                    close: 'fa fa-remove',
-                    inline: true
-                },
-             });
-
-    $('[data-toggle="tooltip"]').tooltip();
-   </script>
 @endpush
