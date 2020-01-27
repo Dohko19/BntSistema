@@ -15,13 +15,13 @@ class CreateSuasTable extends Migration
     {
         Schema::create('suas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->nullable();
             $table->bigInteger('num_mes');
             $table->timestamp('month');
             $table->timestamp('year');
-            $table->string('cedula_determinacion_cuotas');
-            $table->string('resumen_liquidacion');
-            $table->string('pago_sua');
+            $table->string('cedula_determinacion_cuotas')->nullable();
+            $table->string('resumen_liquidacion')->nullable();
+            $table->string('pago_sua')->nullable();
             $table->timestamps();
         });
     }

@@ -10,9 +10,9 @@ class Sua extends Model
 {
 	use DatesTranslator;
 
-    protected $files = [
+    protected $fillable = [
     	'num_mes','month', 'year', 'cedula_determinacion_cuotas',
-        'resumen_liquidacion', 'pago_sua',
+        'resumen_liquidacion', 'pago_sua', 'user_id'
     	];
 
     protected $dates = ['year', 'month'];

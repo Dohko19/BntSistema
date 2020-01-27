@@ -44,21 +44,18 @@
                                                 {{ $sua->year->format('Y') }}
                                             </td>
                                             <td class="text-center">
-                                                <a href="#">
-                                                    {{ $sua->cedula_determinacion_cuotas }}
+                                                <a class="btn btn-sm btn-just-icon btn-simple btn-youtube" href="{{ url('/area_legal/sua/'.$sua->cedula_determinacion_cuotas) }}">
                                                     <i class="fa fa-file-pdf-o"></i>
                                                 </a>
 
                                             </td>
                                             <td class="text-center">
-                                                <a href="#">
-                                                    {{ $sua->resumen_liquidacion }}
+                                                <a class="btn btn-sm btn-just-icon btn-simple btn-youtube" href="{{ url('/area_legal/sua/'.$sua->resumen_liquidacion) }}">
                                                     <i class="fa fa-file-pdf-o"></i>
                                                 </a>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#">
-                                                    {{ $sua->pago_sua }}
+                                                <a class="btn btn-sm btn-just-icon btn-simple btn-youtube"  href="{{ url('/area_legal/sua/'.$sua->pago_sua) }}">
                                                     <i class="fa fa-file-pdf-o"></i>
                                                 </a>
                                             </td>

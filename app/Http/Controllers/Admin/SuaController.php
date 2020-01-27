@@ -48,6 +48,7 @@ class SuaController extends Controller
 
         $this->authorize('create', new Sua);
         $sua = Sua::create($request->except(['cedula_determinacion_cuotas', 'resumen_liquidacion', 'pago_sua']));
+        ddd($sua);
         if ($request->hasFile('cedula_determinacion_cuotas'))
         {
             $file = $request->file('cedula_determinacion_cuotas');
@@ -85,7 +86,7 @@ class SuaController extends Controller
                 }
         }
 
-        return redirect()->route('admin.emas.index', compact('sua'))->with('info', 'Agregado Correctamente');
+        return redirect()->route('admin.suas.index', compact('sua'))->with('info', 'Agregado Correctamente');
     }
 
     /**
@@ -96,7 +97,8 @@ class SuaController extends Controller
      */
     public function show(Sua $sua)
     {
-        //
+        $this->authorize('update', $sua);
+        return view('admin.sua.edit', compact('sua'));
     }
 
     /**
